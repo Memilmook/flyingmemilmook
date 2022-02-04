@@ -7,7 +7,7 @@ public class CurrentScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = "ÇöÀçÁ¡¼ö : " + Score.score.ToString();
+        GetComponent<Text>().text = "í˜„ì¬ì ìˆ˜ : " + Score.score.ToString();
     }
 
     // Update is called once per frame

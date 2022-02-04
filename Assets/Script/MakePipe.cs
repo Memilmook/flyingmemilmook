@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MakePipe : MonoBehaviour
 {
-    public GameObject pipe; //°ÔÀÓ¿ÀºêÁ§Æ®¸¦ ¹Þ´Â´Ù.
+    public GameObject pipe; //ê²Œìž„ì˜¤ë¸Œì íŠ¸ë¥¼ ë°›ëŠ”ë‹¤.
     public float timeDiff;
     float timer = 0;
+    float startTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,19 @@ public class MakePipe : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > timeDiff + Random.Range(1f, 4f))
+        if (startTimer < 4f)
         {
-            GameObject newPipe = Instantiate(pipe);
-            newPipe.transform.position = new Vector3(0.9f, Random.Range(-4f, 1.3f), 0f);
-            timer = 0;
-            Destroy(newPipe, 7f);
+            startTimer += Time.deltaTime;
+        }
+        if (startTimer > 3f)
+        {
+            if (timer > timeDiff + Random.Range(1f, 4f))
+            {
+                GameObject newPipe = Instantiate(pipe);
+                newPipe.transform.position = new Vector3(0.9f, Random.Range(-4f, 1.3f), 0f);
+                timer = 0;
+                Destroy(newPipe, 7f);
+            }
         }
 
     }

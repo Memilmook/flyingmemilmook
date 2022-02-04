@@ -7,7 +7,7 @@ public class BestScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = "ÃÖ°íÁ¡¼ö : " + Score.bestScore;
+        GetComponent<Text>().text = "ìµœê³ ì ìˆ˜ : " + Score.bestScore;
     }
 
 }
